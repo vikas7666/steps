@@ -25,16 +25,20 @@ export default function App() {
 
   // function declaration
   function handlePrevious() {
-    if (step > 1) stepCount(step - 1)
+    // if (step > 1) stepCount(step - 1)/
+    if(step > 1) stepCount((s) => s -1 ) // step are updatig usig callback funtion 
   }
   function handleNext() {
     // update state 
     if (step < 3) stepCount(step + 1)
     updateName({ name: 'fred' })
+    stepCount((s) => s +1)
+    stepCount((s) => s +1)
   }
   return (
   <>
-    <button className="close" onClick={() => setIsOpen(!isOpen)}>&times;</button>
+    {/* <button className="close" onClick={() => setIsOpen(!isOpen)}>&times;</button> */}
+    <button className="close" onClick={() => setIsOpen((is) => !is)}>&times;</button>  
     {isOpen && ( 
     <div className="steps">
       <div className="numbers">
